@@ -1,0 +1,6 @@
+backup
+/url/cookies
+/secrets.el
+/session.*
+/tramp
+/elpa
