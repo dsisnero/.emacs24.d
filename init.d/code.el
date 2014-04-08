@@ -6,7 +6,9 @@
 ;;   t)
 
 ;; Line numbers
-(linum-mode 1)
+;;(linum-mode 1)
+(add-hook 'prog-mode-hook (lambda () (linum-mode 1)))
+
 (add-hook 'des-code-modes-hook
 	  (lambda () (linum-mode 1)))
 
@@ -24,12 +26,14 @@
             (add-hook 'before-save-hook 'whitespace-cleanup nil t)))
 
 ;; Show an indicator of the fill column
-;; (add-hook 'des-code-modes-hook
-;;           (lambda () (fci-mode 1)))  
+;;(require 'fill-column-indicator)
+;;(add-hook 'prog-mode-hook (lambda () (fci-mode 1)))
+;;(add-hook 'des-code-modes-hook
+;(lambda () (fci-mode 1)))  
 
 ;;(add-hook 'des-code-modes-hook
 ;;         (lambda () (show-paren-mode t)))
 
 
 (add-hook 'des-code-modes-hook
-         (lambda ()(column-number-mode t)))     
+	  (lambda ()(column-number-mode t)))     

@@ -1,31 +1,31 @@
-(defun ruby-mode-hook ()
-  (autoload 'ruby-mode "ruby-mode" nil t)
-  (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
-  (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
-  (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
-  (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
-  (add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
-  (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode)))
+(autoload 'ruby-mode "ruby-mode" "Ruby Mode Loading" t)
 
-(add-hook 'ruby-mode-hook '(lambda ()
-			     (setq ruby-deep-arglist t)
-			     (setq ruby-deep-indent-paren nil)
-			     (setq c-tab-always-indent nil)
-			     (local-set-key (kbd "RET") 'newline-and-indent)
-			     )
-	  )
+(add-to-list 'auto-mode-alist '("\\Capfile\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\Gemfile\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\Rakefile\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.rb\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
 
+
+;; (defun ruby-mode-hook ()
+;;       '((setq ruby-deep-arglist t)
+;; 	(setq ruby-deep-indent-paren nil)
+;; 	(setq c-tab-always-indent nil)
+;; 	(local-set-key (kbd "RET") 'newline-and-indent)
+;; 	)
+;; )    
 
 (add-hook 'ruby-mode-hook  '(lambda () (run-hooks 'des-code-modes-hook)))
 (require 'inf-ruby)
 ;;(require 'ruby-compilation)
 
 (defun rhtml-mode-hook ()
-  (autoload 'rhtml-mode "rhtml-mode" nil t)
-  (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
-  (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
-  (add-hook 'rhtml-mode '(lambda ()
-			   (define-key rhtml-mode-map (kbd "M-s") 'save-buffer))))
+  (autoload 'rhtml-mode "rhtml-mode" nil t
+    (add-to-list 'auto-mode-alist '("\\.erb\\'" . rhtml-mode))
+    (add-to-list 'auto-mode-alist '("\\.rjs\\'" . rhtml-mode))
+    (add-hook 'rhtml-mode '(lambda ()
+			     (define-key rhtml-mode-map (kbd "M-s") 'save-buffer)))))
 
 
 (defun yaml-mode-hook ()
@@ -38,3 +38,4 @@
   (add-hook 'css-mode-hook '(lambda ()
 			      (setq css-indent-level 2)
 			      (setq css-indent-offset 2))))
+
