@@ -4,7 +4,6 @@ backup
 /session.*
 /tramp
 /elpa
-
 .#*
 *~
 /el-get/el-get/

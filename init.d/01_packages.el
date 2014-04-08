@@ -1,5 +1,6 @@
 (setq des-required-packages 
-      (list 'xml-rpc 'magit 'gh 'inf-ruby 'feature-mode 'rspec-mode 'ruby-test-mode))
+      (list 'xml-rpc 'magit 'gh 'inf-ruby 'feature-mode 'yasnippet 'rspec-mode 
+       'ruby-test-mode 'sass-mode 'yaml-mode 'scss-mode))
 
 (require 'eieio)
 (setq package-archives 
