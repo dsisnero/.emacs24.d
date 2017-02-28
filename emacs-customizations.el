@@ -11,6 +11,7 @@
      ("melpa" . "http://melpa.org/packages/")
      ("melpa-stable" . "http://stable.melpa.org/packages/")
      ("org" . "http://orgmode.org/elpa/"))))
+ '(package-selected-packages nil)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

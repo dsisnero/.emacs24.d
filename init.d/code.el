@@ -1,5 +1,9 @@
 (setq des-code-modes-hook nil)
 
+;; add projectile
+(require 'projectile)
+(projectile-global-mode)
+
 
 ;; (autoload 'fci-mode "fill-column-indicator"
 ;;   "Toggle fill column indicator"

@@ -5,30 +5,33 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t) ; Org-mode's repository
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
 
-(package-initialize)
-
-(defun des-require-package (name)
-  (unless (package-installed-p name)
-    (package-install name)))
+(package-initialize); activate al the packages
 
 
-(setq des-required-packages
-      '(xml-rpc
-	magit
-	;magithub
-	;gh
-	inf-ruby
-	feature-mode
-	yasnippet
-	rspec-mode
-	rhtml-mode
-	scss-mode
-	pt
-	yaml-mode))
+; fetch the list of packages available
+(unless package-archive-contents 
+  (package-refresh-contents))
 
+(setq package-list '(
+		     feature-mode
+		     helm
+		     helm-ag
+		     helm-projectile		     
+		     inf-ruby
+		     magit
+		     projectile
+		     rhtml-mode
+		     ruby-test-mode
+		     scss-mode		     
+		     seeing-is-believing
+		     sparql-mode
+		     ttl-mode
+		     yasnippet
+		     yaml-mode
+		     xml-rpc
+		     ))
 
-
-(dolist (package des-required-packages)
-  (when (not (package-installed-p package))
-    (package-refresh-contents)
+;; install the missing packages
+(dolist (package package-list) ; install the missing packages
+  (unless (package-installed-p package)
     (package-install package)))
