@@ -13,6 +13,7 @@
   (package-refresh-contents))
 
 (setq package-list '(
+		     adoc-mode
 		     feature-mode
 		     helm
 		     helm-ag
