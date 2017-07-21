@@ -21,6 +21,7 @@
 		     inf-ruby
 		     magit
 		     projectile
+		     puppet-mode
 		     rhtml-mode
 		     ruby-test-mode
 		     scss-mode		     
