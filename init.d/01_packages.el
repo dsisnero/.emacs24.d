@@ -19,11 +19,13 @@
 		     helm-ag
 		     helm-projectile		     
 		     inf-ruby
-		     magit
+		     magit	       
 		     projectile
+		     pt
 		     puppet-mode
 		     rhtml-mode
 		     ruby-test-mode
+		     rspec-mode		     
 		     scss-mode		     
 		     seeing-is-believing
 		     sparql-mode
